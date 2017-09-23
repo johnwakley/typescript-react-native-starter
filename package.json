@@ -1,0 +1,62 @@
+{
+	"name": "TypeScriptReactNativeStarter",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
+		"lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+		"lint-fix": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
+		"build": "yarn lint && yarn test && tsc",
+		"prettier": "prettier --write 'src/**/*.{ts,tsx}'",
+		"precommit": "yarn build",
+		"prepush": "yarn build",
+		"run-ios": "yarn build && react-native run-ios",
+		"run-android": "yarn build && react-native run-android"
+	},
+	"dependencies": {
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.47.2"
+	},
+	"devDependencies": {
+		"@types/jest": "^21.1.0",
+		"@types/react": "^16.0.5",
+		"@types/react-native": "^0.48.6",
+		"@types/react-test-renderer": "^15.5.4",
+		"babel-jest": "21.0.2",
+		"babel-preset-react-native": "4.0.0",
+		"husky": "^0.14.3",
+		"jest": "21.1.0",
+		"lint-staged": "^4.2.2",
+		"prettier": "^1.7.0",
+		"react-test-renderer": "16.0.0-alpha.12",
+		"ts-jest": "^21.0.1",
+		"tslint": "^5.7.0",
+		"tslint-react": "^3.2.0",
+		"typescript": "^2.5.2"
+	},
+	"lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+	"jest": {
+		"preset": "react-native",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+		"testPathIgnorePatterns": [
+			"\\.snap$",
+			"<rootDir>/node_modules/",
+			"<rootDir>/lib/"
+		],
+		"cacheDirectory": ".jest/cache"
+	}
+}
