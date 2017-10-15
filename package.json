@@ -6,6 +6,7 @@
 		"test": "jest",
 		"lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
 		"lint-fix": "tslint --fix -c tslint.json 'src/**/*.{ts,tsx}'",
+		"clean-build": "rm -rf ./lib ./ios/build",
 		"build": "yarn lint && yarn test && tsc",
 		"prettier": "prettier --write 'src/**/*.{ts,tsx}'",
 		"precommit": "yarn build",
@@ -14,32 +15,32 @@
 		"run-android": "yarn build && react-native run-android"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.47.2"
+		"react": "^16.0.0",
+		"react-native": "0.49.3"
 	},
 	"devDependencies": {
 		"@types/jest": "^21.1.0",
 		"@types/react": "^16.0.5",
-		"@types/react-native": "^0.48.6",
-		"@types/react-test-renderer": "^15.5.4",
-		"babel-jest": "21.0.2",
+		"@types/react-native": "^0.49.2",
+		"@types/react-test-renderer": "^16.0.0",
+		"babel-jest": "^21.2.0",
 		"babel-preset-react-native": "4.0.0",
 		"husky": "^0.14.3",
-		"jest": "21.1.0",
+		"jest": "21.2.1",
 		"lint-staged": "^4.2.2",
 		"prettier": "^1.7.0",
-		"react-test-renderer": "16.0.0-alpha.12",
+		"react-test-renderer": "^16.0.0",
 		"ts-jest": "^21.0.1",
 		"tslint": "^5.7.0",
 		"tslint-react": "^3.2.0",
 		"typescript": "^2.5.2"
 	},
 	"lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+		"*.{ts,tsx}": [
+			"prettier --write",
+			"git add"
+		]
+	},
 	"jest": {
 		"preset": "react-native",
 		"moduleFileExtensions": [

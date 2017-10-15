@@ -46,6 +46,8 @@ Both versions will run `tslint` and unit tests before deploying a successful bui
 
 
 ## TODO
+- Update to new react-native 45+ approach
+  - https://github.com/Microsoft/TypeScript-React-Native-Starter/issues/8
 - Enable Enzyme tests once this issue is fixed:
   - https://github.com/airbnb/enzyme/issues/928
 - Storybook for React Native
